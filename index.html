@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ismatov Fayzullo - CV</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --accent: #e74c3c;
+      --light: #ecf0f1;
+      --dark: #2c3e50;
+      --gradient-start: #2c3e50;
+      --gradient-end: #3498db;
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      color: var(--dark);
+      background-color: #f8f9fa;
+      overflow-x: hidden;
+    }
+    
+    /* Language selector */
+    .language-selector {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      gap: 10px;
+    }
+    
+    .lang-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: var(--transition);
+    }
+    
+    .lang-btn:hover {
+      transform: translateY(-3px);
+      background: var(--secondary);
+    }
+    
+    .lang-btn.active {
+      background: var(--accent);
+    }
+    
+    /* Header with animated gradient */
+    header {
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      background-size: 400% 400%;
+      color: white;
+      text-align: center;
+      padding: 3rem 0;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      animation: gradientAnimation 15s ease infinite;
+    }
+    
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    .tagline {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+    
+    /* Modern navigation */
+    nav {
+      background-color: var(--primary);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo i {
+      color: var(--secondary);
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    nav li {
+      margin: 0 0.5rem;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.75rem 1.25rem;
+      border-radius: 50px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    nav a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: rgba(255,255,255,0.1);
+      transition: width 0.4s ease;
+      z-index: -1;
+    }
+    
+    nav a:hover::before {
+      width: 100%;
+    }
+    
+    nav a:hover {
+      color: var(--secondary);
+    }
+    
+    nav a.active {
+      background: rgba(255,255,255,0.15);
+      color: var(--secondary);
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    /* Section styling */
+    section {
+      padding: 4rem 2rem;
+      margin: 2rem auto;
+      max-width: 1200px;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--secondary), var(--accent));
+    }
+    
+    h2 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    
+    .info-table tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+    
+    .info-table th, .info-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .info-table th {
+      width: 30%;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin-left: 1rem;
+    }
+    
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--secondary);
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .timeline-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -2.3rem;
+      top: 0.3rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    
+    .timeline-date {
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .timeline-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .skill-category {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+    
+    .skill-category h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--secondary);
+      padding-bottom: 0.5rem;
+    }
+    
+    .skill-item {
+      margin-bottom: 1rem;
+    }
+    
+    .skill-name {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    
+    .skill-level {
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .skill-level-bar {
+      height: 100%;
+      background: var(--secondary);
+      border-radius: 4px;
+    }
+    
+    /* Gallery section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      height: 240px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: white;
+      padding: 1.5rem 1rem 1rem;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--primary);
+      color: white;
+      margin-top: 4rem;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .contact-item i {
+      color: var(--secondary);
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    
+    .social-links a:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      margin-top: 1.5rem;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      
+      nav ul.show {
+        display: flex;
+      }
+      
+      nav li {
+        margin: 0.5rem 1rem;
+      }
+      
+      section {
+        padding: 2.5rem 1.5rem;
+      }
+      
+      .info-table th, .info-table td {
+        padding: 0.75rem;
+        display: block;
+        width: 100%;
+      }
+      
+      .info-table th {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      
+      .language-selector {
+        flex-direction: row;
+        bottom: 10px;
+        right: 10px;
+      }
+      
+      .lang-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .tagline {
+        font-size: 1.2rem;
+      }
+      
+      section {
+        padding: 2rem 1rem;
+        margin: 1rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Language selector -->
+  <div class="language-selector">
+    <button class="lang-btn active" data-lang="tg">Тҷ</button>
+    <button class="lang-btn" data-lang="ru">RU</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+
+  <header>
+    <div class="header-content">
+      <h1 data-translate="name">Исматов Файзулло</h1>
+      <p class="tagline" data-translate="title">Муаллими математика</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <i class="fas fa-user-graduate"></i>
+        <span data-translate="surname">Исматов Ф.</span>
+      </a>
+      <button class="mobile-menu-btn" aria-label="Menu" data-translate="menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul>
+        <li><a href="#personal" class="active" data-translate="personal_info">Маълумоти шахсӣ</a></li>
+        <li><a href="#education" data-translate="education">Таҳсилот</a></li>
+        <li><a href="#experience" data-translate="experience">Таҷрибаи корӣ</a></li>
+        <li><a href="#skills" data-translate="skills">Малакаҳо</a></li>
+        <li><a href="#gallery" data-translate="gallery">Галерея</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="personal">
+    <h2 data-translate="personal_info">Маълумоти шахсӣ</h2>
+    <table class="info-table">
+      <tr>
+        <th data-translate="full_name">Ном ва насаб</th>
+        <td data-translate="name_value">Исматов Файзулло</td>
+      </tr>
+      <tr>
+        <th data-translate="address">Суроға</th>
+        <td data-translate="address_value">Ҷумҳурии Тоҷикистон, ноҳияи Шамсиддин Шоҳин, деҳаи Мешкорон</td>
+      </tr>
+      <tr>
+        <th data-translate="phone">Телефон</th>
+        <td>+992 988011564, +992 206995050</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>
+          <a href="mailto:h.ismatovfayzullo@mail.ru">h.ismatovfayzullo@mail.ru</a>
+        </td>
+      </tr>
+      <tr>
+        <th data-translate="gender">Ҷинс</th>
+        <td data-translate="male">Мард</td>
+      </tr>
+      <tr>
+        <th data-translate="birth_date">Таваллуд</th>
+        <td>14.03.1998</td>
+      </tr>
+      <tr>
+        <th data-translate="marital_status">Вазифаи оилавӣ</th>
+        <td data-translate="marital_status_value">Оиладор, соҳиби 3 фарзанд</td>
+      </tr>
+      <tr>
+        <th data-translate="nationality">Ҷинсият</th>
+        <td data-translate="tajikistan">Тоҷикистон</td>
+      </tr>
+      <tr>
+        <th data-translate="driving_license">Шиносномаи ронандагӣ</th>
+        <td data-translate="license_b">Категорияи B</td>
+      </tr>
+      <tr>
+        <th data-translate="military_service">Вазифаи ҳарбӣ</th>
+        <td data-translate="no_military">Афсари эҳтиётӣ</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="education">
+    <h2 data-translate="education">Таҳсилот</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">01.09.2004 - 01.07.2014</div>
+        <div class="timeline-content">
+          <h3 data-translate="school">Мактаби давлатии №34 ноҳияи Шамсиддин Шоҳин</h3>
+          <p data-translate="secondary_edu">Таҳсилоти миёнаи умумӣ</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">20.09.2015 - 01.08.2019</div>
+        <div class="timeline-content">
+          <h3 data-translate="tajik_uni">Донишгоҳи миллии Тоҷикистон</h3>
+          <p data-translate="bachelor_degree">Факултети механика ва математика (Бакалавр)</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">20.10.2019 - 20.06.2022</div>
+        <div class="timeline-content">
+          <h3 data-translate="tajik_uni">Донишгоҳи миллии Тоҷикистон</h3>
+          <p data-translate="masters_degree">Факултети механика ва математика (Магистр)</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">01.09.2022 – 01.07.2025</div>
+        <div class="timeline-content">
+          <h3 data-translate="tajik_uni">Донишгоҳи миллии Тоҷикистон</h3>
+          <p data-translate="phd_degree">Факултети механика ва математика (PhD, аспирантура)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 data-translate="experience">Таҷрибаи корӣ</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">01.09.2019 – 01.08.2023</div>
+        <div class="timeline-content">
+          <h3 data-translate="math_teacher">Муаллими фанни математика</h3>
+          <p data-translate="lyceum_dushanbe">Лицейи барои хонандагӣ болаёқати шаҳри Душанбе</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">01.09.2023 – то ҳол</div>
+        <div class="timeline-content">
+          <h3 data-translate="math_teacher">Муаллими фанни математика</h3>
+          <p data-translate="private_lyceum">Мактаби хусусии лицейи "Адолат" шаҳри Душанбе</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 data-translate="skills">Малакаҳо</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3 data-translate="computer_skills">Иттилоотии компютерӣ</h3>
+        <div class="skill-item">
+          <div class="skill-name">Microsoft Word</div>
+          <div class="skill-level">
+            <div class="skill-level-bar" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Microsoft Excel</div>
+          <div class="skill-level">
+            <div class="skill-level-bar" style="width: 95%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">PowerPoint</div>
+          <div class="skill-level">
+            <div class="skill-level-bar" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name" data-translate="internet">Интернет</div>
+          <div class="skill-level">
+            <div class="skill-level-bar" style="width: 95%"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3 data-translate="languages">Забонҳо</h3>
+        <div class="skill-item">
+          <div class="skill-name" data-translate="tajik">Тоҷикӣ</div>
+          <div class="skill-level">
+            <div class="skill-level-bar" style="width: 100%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name" data-translate="russian">Русӣ</div>
+          <div class="skill-level">
+            <div class="skill-level-bar" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name" data-translate="english">Англисӣ</div>
+          <div class="skill-level">
+            <div class="skill-level-bar" style="width: 70%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2 data-translate="gallery">Галерея</h2>
+    <div class="gallery" id="photoGallery">
+      <!-- Photos will be loaded from JSON -->
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo" data-translate="name">Исматов Файзулло</div>
+      <p data-translate="footer_title">Муаллими математика</p>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+992 988011564</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:h.ismatovfayzullo@mail.ru">h.ismatovfayzullo@mail.ru</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span data-translate="dushanbe">Душанбе, Тоҷикистон</span>
+        </div>
+      </div>
+      
+      <div class="social-links">
+        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      
+      <p class="copyright">© 2024 <span data-translate="name">Исматов Файзулло</span>. <span data-translate="rights">Ҳамаи ҳуқуқҳо ҳифз шудаанд.</span></p>
+    </div>
+  </footer>
+
+  <script>
+    // Multilingual support
+    const translations = {
+      tg: {
+        name: "Исматов Файзулло",
+        surname: "Исматов Ф.",
+        title: "Муаллими математика",
+        menu: "Меню",
+        personal_info: "Маълумоти шахсӣ",
+        education: "Таҳсилот",
+        experience: "Таҷрибаи корӣ",
+        skills: "Малакаҳо",
+        gallery: "Галерея",
+        full_name: "Ном ва насаб",
+        name_value: "Исматов Файзулло",
+        address: "Суроға",
+        address_value: "Ҷумҳурии Тоҷикистон, ноҳияи Шамсиддин Шоҳин, деҳаи Мешкорон",
+        phone: "Телефон",
+        gender: "Ҷинс",
+        male: "Мард",
+        birth_date: "Таваллуд",
+        marital_status: "Вазифаи оилавӣ",
+        marital_status_value: "Оиладор, соҳиби 3 фарзанд",
+        nationality: "Ҷинсият",
+        tajikistan: "Тоҷикистон",
+        driving_license: "Шиносномаи ронандагӣ",
+        license_b: "Категорияи B",
+        military_service: "Вазифаи ҳарбӣ",
+        no_military: "Афсари эҳтиётӣ",
+        school: "Мактаби давлатии №34 ноҳияи Шамсиддин Шоҳин",
+        secondary_edu: "Таҳсилоти миёнаи умумӣ",
+        tajik_uni: "Донишгоҳи миллии Тоҷикистон",
+        bachelor_degree: "Факултети механика ва математика (Бакалавр)",
+        masters_degree: "Факултети механика ва математика (Магистр)",
+        phd_degree: "Факултети механика ва математика (PhD, аспирантура)",
+        math_teacher: "Муаллими фанни математика",
+        lyceum_dushanbe: "Лицейи барои хонандагӣ болаёқати шаҳри Душанбе",
+        private_lyceum: "Мактаби хусусии лицейи 'Адолат' шаҳри Душанбе",
+        computer_skills: "Иттилоотии компютерӣ",
+        internet: "Интернет",
+        languages: "Забонҳо",
+        tajik: "Тоҷикӣ",
+        russian: "Русӣ",
+        english: "Англисӣ",
+        footer_title: "Муаллими математика",
+        dushanbe: "Душанбе, Тоҷикистон",
+        rights: "Ҳамаи ҳуқуқҳо ҳифз шудаанд."
+      },
+      ru: {
+        name: "Исматов Файзулло",
+        surname: "Исматов Ф.",
+        title: "Учитель математики",
+        menu: "Меню",
+        personal_info: "Личная информация",
+        education: "Образование",
+        experience: "Опыт работы",
+        skills: "Навыки",
+        gallery: "Галерея",
+        full_name: "ФИО",
+        name_value: "Исматов Файзулло",
+        address: "Адрес",
+        address_value: "Республика Таджикистан, район Шамсиддин Шохин, село Мешкорон",
+        phone: "Телефон",
+        gender: "Пол",
+        male: "Мужской",
+        birth_date: "Дата рождения",
+        marital_status: "Семейное положение",
+        marital_status_value: "Женат, отец 3 детей",
+        nationality: "Гражданство",
+        tajikistan: "Таджикистан",
+        driving_license: "Водительские права",
+        license_b: "Категория B",
+        military_service: "Военная служба",
+        no_military: "Офицер запаса",
+        school: "Государственная школа №34 района Шамсиддин Шохин",
+        secondary_edu: "Среднее образование",
+        tajik_uni: "Таджикский национальный университет",
+        bachelor_degree: "Факультет механики и математики (Бакалавр)",
+        masters_degree: "Факультет механики и математики (Магистр)",
+        phd_degree: "Факультет механики и математики (PhD, аспирантура)",
+        math_teacher: "Учитель математики",
+        lyceum_dushanbe: "Лицей для одаренных детей города Душанбе",
+        private_lyceum: "Частный лицей 'Адолат' города Душанбе",
+        computer_skills: "Компьютерные навыки",
+        internet: "Интернет",
+        languages: "Языки",
+        tajik: "Таджикский",
+        russian: "Русский",
+        english: "Английский",
+        footer_title: "Учитель математики",
+        dushanbe: "Душанбе, Таджикистан",
+        rights: "Все права защищены."
+      },
+      en: {
+        name: "Ismatov Fayzullo",
+        surname: "Ismatov F.",
+        title: "Mathematics Teacher",
+        menu: "Menu",
+        personal_info: "Personal Information",
+        education: "Education",
+        experience: "Work Experience",
+        skills: "Skills",
+        gallery: "Gallery",
+        full_name: "Full Name",
+        name_value: "Ismatov Fayzullo",
+        address: "Address",
+        address_value: "Republic of Tajikistan, Shamsiddin Shohin District, Meshkoron Village",
+        phone: "Phone",
+        gender: "Gender",
+        male: "Male",
+        birth_date: "Date of Birth",
+        marital_status: "Marital Status",
+        marital_status_value: "Married, father of 3 children",
+        nationality: "Nationality",
+        tajikistan: "Tajikistan",
+        driving_license: "Driving License",
+        license_b: "Category B",
+        military_service: "Military Service",
+        no_military: "Reserve Officer",
+        school: "State School No. 34, Shamsiddin Shohin District",
+        secondary_edu: "Secondary Education",
+        tajik_uni: "Tajik National University",
+        bachelor_degree: "Faculty of Mechanics and Mathematics (Bachelor)",
+        masters_degree: "Faculty of Mechanics and Mathematics (Master)",
+        phd_degree: "Faculty of Mechanics and Mathematics (PhD, postgraduate)",
+        math_teacher: "Mathematics Teacher",
+        lyceum_dushanbe: "Lyceum for Gifted Students, Dushanbe",
+        private_lyceum: "Private Lyceum 'Adolat', Dushanbe",
+        computer_skills: "Computer Skills",
+        internet: "Internet",
+        languages: "Languages",
+        tajik: "Tajik",
+        russian: "Russian",
+        english: "English",
+        footer_title: "Mathematics Teacher",
+        dushanbe: "Dushanbe, Tajikistan",
+        rights: "All rights reserved."
+      }
+    };
+
+    // Current language
+    let currentLang = 'tg';
+
+    // Change language function
+    function changeLanguage(lang) {
+      currentLang = lang;
+      
+      // Update active button
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.lang === lang) {
+          btn.classList.add('active');
+        }
+      });
+      
+      // Update all translatable elements
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+      
+      // Update gallery captions
+      loadGallery();
+    }
+
+    // Load gallery photos from JSON
+    const galleryData = [
+      {
+       "filename": "dars.jpg",
+        "caption_tg": "Дарс додан",
+        "caption_ru": "Проведение урока",
+        "caption_en": "Teaching in class"
+      },
+      {
+        "filename": "logo.jpg",
+        "caption_tg": "Фаъолияти таълимӣ",
+        "caption_ru": "Учебная деятельность",
+        "caption_en": "Educational activities"
+      },
+      {
+         "filename": "konfrons.jpg",
+        "caption_tg": "Конференсияи илмӣ",
+        "caption_ru": "Научная конференция",
+        "caption_en": "Scientific conference"
+      },
+      {
+         "filename": ".jpg",
+        "caption_tg": "Фаъолияти иҷтимоӣ",
+        "caption_ru": "Общественная деятельность",
+        "caption_en": "Social activities"
+      }
+    ];
+
+    function loadGallery() {
+      const gallery = document.getElementById('photoGallery');
+      gallery.innerHTML = '';
+      
+      galleryData.forEach(item => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        galleryItem.innerHTML = `
+          <img src="${item.url}" alt="${item[`caption_${currentLang}`]}">
+          <div class="gallery-caption">${item[`caption_${currentLang}`]}</div>
+        `;
+        gallery.appendChild(galleryItem);
+      });
+    }
+
+    // Initialize language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        changeLanguage(btn.dataset.lang);
+      });
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('nav ul');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+      mobileMenuBtn.setAttribute('aria-expanded', navMenu.classList.contains('show'));
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-container') && navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Update active class
+          document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Close mobile menu if open
+          navMenu.classList.remove('show');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+    
+    // Update active nav link on scroll
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      
+      document.querySelectorAll('section').forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          document.querySelectorAll('nav a').forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href') === `#${sectionId}`) {
+              a.classList.add('active');
+            }
+          });
+        }
+      });
+    });
+
+    // Initialize gallery
+    loadGallery();
+  </script>
+</body>
+</html>
